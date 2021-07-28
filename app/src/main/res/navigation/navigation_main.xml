@@ -9,7 +9,11 @@
         android:id="@+id/newsFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.NewsFragment"
         android:label="@string/news"
-        tools:layout="@layout/fragment_news"/>
+        tools:layout="@layout/fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+    </fragment>
     <fragment
         android:id="@+id/championFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.ChampionFragment"
@@ -25,4 +29,15 @@
         android:name="com.taetae98.wildriftdictionary.fragment.RuneFragment"
         android:label="@string/rune"
         tools:layout="@layout/fragment_rune"/>
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.taetae98.wildriftdictionary.activity.WebViewActivity"
+        tools:layout="@layout/activity_web_view">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </activity>
 </navigation>
