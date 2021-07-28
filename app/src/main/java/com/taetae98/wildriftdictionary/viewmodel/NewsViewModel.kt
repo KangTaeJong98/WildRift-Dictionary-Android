@@ -1,6 +1,5 @@
 package com.taetae98.wildriftdictionary.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,11 +7,8 @@ import com.taetae98.wildriftdictionary.dto.News
 import com.taetae98.wildriftdictionary.manager.LocaleManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.internal.ChannelFlow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.jsoup.Jsoup
 import javax.inject.Inject
 

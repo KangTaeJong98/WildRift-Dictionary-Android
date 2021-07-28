@@ -5,12 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.taetae98.wildriftdictionary.viewmodel.WebViewViewModel" />
     </data>
 
-    <com.google.android.material.textview.MaterialTextView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Hello"/>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_web_view" />
 </layout>

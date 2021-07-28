@@ -1,7 +1,6 @@
 package com.taetae98.wildriftdictionary.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +13,7 @@ import com.taetae98.wildriftdictionary.databinding.BindingFragment
 import com.taetae98.wildriftdictionary.databinding.FragmentNewsBinding
 import com.taetae98.wildriftdictionary.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class NewsFragment : BindingFragment<FragmentNewsBinding>(R.layout.fragment_news) {
@@ -28,7 +23,7 @@ class NewsFragment : BindingFragment<FragmentNewsBinding>(R.layout.fragment_news
             onNewsClickListener = {
                 findNavController().navigate(
                     NewsFragmentDirections.actionNewsFragmentToWebViewActivity(
-                        requireContext().getString(R.string.news), it.url
+                        it.url
                     )
                 )
             }
