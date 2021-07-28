@@ -1,6 +1,5 @@
 package com.taetae98.wildriftdictionary.repository
 
-import android.util.Log
 import com.taetae98.wildriftdictionary.dto.News
 import com.taetae98.wildriftdictionary.manager.LocaleManager
 import kotlinx.coroutines.Dispatchers
@@ -34,8 +33,6 @@ class NewRepository @Inject constructor() {
 
             data = arrayList
         }
-
-        Log.d("PASS", "Update News")
     }
 
     fun findAll(): List<News> {

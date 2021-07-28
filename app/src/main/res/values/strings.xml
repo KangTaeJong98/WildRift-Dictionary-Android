@@ -5,4 +5,8 @@
     <string name="item">Item</string>
     <string name="rune">Rune</string>
     <string name="image">Image</string>
+    <string name="upgraded">Upgraded</string>
+    <string name="mid_tier">Mid Tier</string>
+    <string name="enchantments">Enchantments</string>
+    <string name="basic">Basic</string>
 </resources>
