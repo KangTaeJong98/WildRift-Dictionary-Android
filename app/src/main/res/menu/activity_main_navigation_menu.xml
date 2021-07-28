@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newsFragment"
+        android:icon="@drawable/ic_round_notifications_active_24"
+        android:title="@string/news"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/championFragment"
+        android:icon="@drawable/ic_champion_24"
+        android:title="@string/champion"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/itemFragment"
+        android:icon="@drawable/ic_weapon_24"
+        android:title="@string/item"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/runeFragment"
+        android:icon="@drawable/ic_round_menu_book_24"
+        android:title="@string/rune"
+        app:showAsAction="ifRoom"/>
+</menu>
