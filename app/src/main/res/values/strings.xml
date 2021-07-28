@@ -4,4 +4,5 @@
     <string name="champion">Champion</string>
     <string name="item">Item</string>
     <string name="rune">Rune</string>
+    <string name="image">Image</string>
 </resources>
