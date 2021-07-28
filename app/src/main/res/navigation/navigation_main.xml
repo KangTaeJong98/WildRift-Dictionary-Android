@@ -34,9 +34,6 @@
         android:name="com.taetae98.wildriftdictionary.activity.WebViewActivity"
         tools:layout="@layout/activity_web_view">
         <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
             android:name="url"
             app:argType="string" />
     </activity>
