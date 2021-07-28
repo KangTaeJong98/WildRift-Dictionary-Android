@@ -9,4 +9,8 @@
     <string name="mid_tier">Mid Tier</string>
     <string name="enchantments">Enchantments</string>
     <string name="basic">Basic</string>
+    <string name="key_stone">Key Stone</string>
+    <string name="domination">Domination</string>
+    <string name="resolve">Resolve</string>
+    <string name="inspiration">Inspiration</string>
 </resources>

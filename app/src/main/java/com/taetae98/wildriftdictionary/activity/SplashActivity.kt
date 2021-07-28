@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.taetae98.wildriftdictionary.repository.ChampionRepository
 import com.taetae98.wildriftdictionary.repository.ItemRepository
 import com.taetae98.wildriftdictionary.repository.NewRepository
+import com.taetae98.wildriftdictionary.repository.RuneRepository
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -22,12 +23,16 @@ class SplashActivity : AppCompatActivity() {
     @Inject
     lateinit var itemRepository: ItemRepository
 
+    @Inject
+    lateinit var runeRepository: RuneRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         runBlocking(Dispatchers.IO) {
             newRepository.update()
             championRepository.update()
             itemRepository.update()
+            runeRepository.update()
         }
 
         startActivity(Intent(this, MainActivity::class.java))
