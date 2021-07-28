@@ -6,6 +6,7 @@
         <import type="android.view.View" />
         <import type="com.taetae98.wildriftdictionary.dto.Item.Type" />
         <import type="com.google.android.flexbox.JustifyContent" />
+
         <variable
             name="itemPage"
             type="com.taetae98.wildriftdictionary.adapter.ItemPageAdapter.ItemPage" />
@@ -47,6 +48,7 @@
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:padding="5dp"
+                        app:itemSpace="@{5}"
                         app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                         app:justifyContent="@{JustifyContent.CENTER}"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,6 +88,7 @@
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:padding="5dp"
+                        app:itemSpace="@{5}"
                         app:justifyContent="@{JustifyContent.CENTER}"
                         app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -125,6 +128,7 @@
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:padding="5dp"
+                        app:itemSpace="@{5}"
                         app:justifyContent="@{JustifyContent.CENTER}"
                         app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -165,6 +169,7 @@
                         android:clipToPadding="false"
                         android:orientation="horizontal"
                         android:padding="5dp"
+                        app:itemSpace="@{5}"
                         android:nestedScrollingEnabled="false"
                         app:justifyContent="@{JustifyContent.CENTER}"
                         app:layoutManager="com.google.android.flexbox.FlexboxLayoutManager"

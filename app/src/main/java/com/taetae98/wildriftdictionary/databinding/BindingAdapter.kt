@@ -7,6 +7,8 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.flexbox.FlexboxLayoutManager
+import com.taetae98.wildriftdictionary.decoration.SpacingItemDecoration
+import com.taetae98.wildriftdictionary.toDp
 
 object BindingAdapter {
     @JvmStatic
@@ -29,6 +31,12 @@ object BindingAdapter {
         }
 
         view.loadUrl(url)
+    }
+
+    @JvmStatic
+    @BindingAdapter("itemSpace")
+    fun setSpacingItemDecoration(view: RecyclerView, space: Int) {
+        view.addItemDecoration(SpacingItemDecoration(space.toDp()))
     }
 
     @JvmStatic

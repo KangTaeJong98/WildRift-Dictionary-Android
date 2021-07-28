@@ -124,28 +124,24 @@ class ItemPageAdapter @Inject constructor(
         private fun onCreateUpgradedRecyclerView() {
             with(binding.upgradedRecyclerView) {
                 adapter = upgradedItemAdapter
-                addItemDecoration(SpacingItemDecoration(5.toDp()))
             }
         }
 
         private fun onCreateMidRecyclerView() {
             with(binding.midRecyclerView) {
                 adapter = midItemAdapter
-                addItemDecoration(SpacingItemDecoration(5.toDp()))
             }
         }
 
         private fun onCreateEnchantmentsRecyclerView() {
             with(binding.enchantmentsRecyclerView) {
                 adapter = enchantmentsItemAdapter
-                addItemDecoration(SpacingItemDecoration(5.toDp()))
             }
         }
 
         private fun onCreateBasicRecyclerView() {
             with(binding.basicRecyclerView) {
                 adapter = basicItemAdapter
-                addItemDecoration(SpacingItemDecoration(5.toDp()))
             }
         }
     }
