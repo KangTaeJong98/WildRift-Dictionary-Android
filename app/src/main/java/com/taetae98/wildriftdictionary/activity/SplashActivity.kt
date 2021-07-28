@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.taetae98.wildriftdictionary.repository.ChampionRepository
+import com.taetae98.wildriftdictionary.repository.ItemRepository
 import com.taetae98.wildriftdictionary.repository.NewRepository
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -18,11 +19,15 @@ class SplashActivity : AppCompatActivity() {
     @Inject
     lateinit var championRepository: ChampionRepository
 
+    @Inject
+    lateinit var itemRepository: ItemRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         runBlocking(Dispatchers.IO) {
             newRepository.update()
             championRepository.update()
+            itemRepository.update()
         }
 
         startActivity(Intent(this, MainActivity::class.java))

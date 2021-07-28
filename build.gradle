@@ -6,9 +6,11 @@ buildscript {
         hilt_version = "2.37"
         jsoup_version = "1.14.1"
         glide_version = "4.12.0"
+        flex_box_version = "3.0.0"
     }
     repositories {
         google()
+        jcenter()
         mavenCentral()
     }
     dependencies {
@@ -27,6 +29,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        jcenter()
         mavenCentral()
     }
 }
