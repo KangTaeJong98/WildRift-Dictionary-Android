@@ -4,20 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.taetae98.wildriftdictionary.R
 import com.taetae98.wildriftdictionary.adapter.NewsAdapter
 import com.taetae98.wildriftdictionary.databinding.BindingFragment
 import com.taetae98.wildriftdictionary.databinding.FragmentNewsBinding
-import com.taetae98.wildriftdictionary.viewmodel.NewsViewModel
+import com.taetae98.wildriftdictionary.repository.NewRepository
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class NewsFragment : BindingFragment<FragmentNewsBinding>(R.layout.fragment_news) {
-    private val viewModel by viewModels<NewsViewModel>()
+    @Inject
+    lateinit var newRepository: NewRepository
+
     private val newsAdapter by lazy {
         NewsAdapter().apply {
             onNewsClickListener = {
@@ -27,6 +27,8 @@ class NewsFragment : BindingFragment<FragmentNewsBinding>(R.layout.fragment_news
                     )
                 )
             }
+
+            submitList(newRepository.findAll())
         }
     }
 
@@ -40,12 +42,6 @@ class NewsFragment : BindingFragment<FragmentNewsBinding>(R.layout.fragment_news
     private fun onCreateRecyclerView() {
         with(binding.recyclerView) {
             adapter = newsAdapter
-        }
-
-        lifecycleScope.launchWhenResumed {
-            viewModel.data.collect {
-                newsAdapter.submitList(it)
-            }
         }
     }
 }
