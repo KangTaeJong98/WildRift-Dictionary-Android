@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WildRif tDictionary</string>
+    <string name="news">News</string>
+    <string name="champion">Champion</string>
+    <string name="item">Item</string>
+    <string name="rune">Rune</string>
 </resources>

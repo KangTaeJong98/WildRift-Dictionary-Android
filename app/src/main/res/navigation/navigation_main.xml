@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main.xml"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.taetae98.wildriftdictionary.fragment.NewsFragment"
+        android:label="@string/news"
+        tools:layout="@layout/fragment_news"/>
+    <fragment
+        android:id="@+id/championFragment"
+        android:name="com.taetae98.wildriftdictionary.fragment.ChampionFragment"
+        android:label="@string/champion"
+        tools:layout="@layout/fragment_champion"/>
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.taetae98.wildriftdictionary.fragment.ItemFragment"
+        android:label="@string/item"
+        tools:layout="@layout/fragment_item"/>
+    <fragment
+        android:id="@+id/runeFragment"
+        android:name="com.taetae98.wildriftdictionary.fragment.RuneFragment"
+        android:label="@string/rune"
+        tools:layout="@layout/fragment_rune"/>
+</navigation>
