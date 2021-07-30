@@ -16,6 +16,7 @@
     </data>
 
     <ScrollView
+        android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +46,9 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textview.MaterialTextView
+                        style="@style/Theme.WildRiftDictionary.Text.Cost"
                         android:text="@{viewModel.information.cost}"
+                        android:textColor="#FF0AE1FB"
                         android:drawableStart="@drawable/ic_cost_24"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -53,7 +56,9 @@
                         tools:text="1000"/>
 
                     <com.google.android.material.textview.MaterialTextView
+                        style="@style/Theme.WildRiftDictionary.Text.Cost"
                         android:text="@{viewModel.information.wildCore}"
+                        android:textColor="#FFFFFF"
                         android:drawableStart="@drawable/ic_wild_core_24"
                         android:layout_weight="1"
                         android:layout_width="0dp"
@@ -74,6 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textview.MaterialTextView
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:id="@+id/item_text_view"
                         android:text="@string/recommend_item"
                         android:layout_width="wrap_content"
@@ -110,14 +116,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/rune_text_view"
-                        android:text="@string/recommend_rune"
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/recommend_rune"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rune_recycler_view"
                         android:layout_width="match_parent"
@@ -147,14 +155,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/spell_text_view"
-                        android:text="@string/recommend_spell"
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/recommend_spell"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/spell_recycler_view"
                         android:layout_width="match_parent"
@@ -184,14 +194,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/ability_text_view"
-                        android:text="@string/ability"
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/ability"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/ability_recycler_view"
                         android:clipToPadding="false"
@@ -218,14 +230,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/sub_ability_text_view"
-                        android:text="@string/sub_ability"
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/sub_ability"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/sub_ability_recycler_view"
                         android:layout_width="wrap_content"
@@ -252,14 +266,16 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/skill_text_view"
-                        android:text="@string/skill"
+                        style="@style/Theme.WildRiftDictionary.Text.Title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:text="@string/skill"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintTop_toTopOf="parent" />
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/skill_recycler_view"
                         android:layout_width="wrap_content"

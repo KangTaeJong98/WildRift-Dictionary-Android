@@ -29,14 +29,13 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.WildRiftDictionary.Text"
             android:id="@+id/title"
             android:text="@{news.title}"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:gravity="center"
             android:background="#80000000"
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"

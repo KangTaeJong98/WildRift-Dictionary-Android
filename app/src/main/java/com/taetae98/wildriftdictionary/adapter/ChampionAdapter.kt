@@ -42,14 +42,18 @@ class ChampionAdapter : BaseAdapter<Champion>(itemCallback)  {
 
     inner class ChampionHolder(binding: HolderChampionBinding) : BaseHolder<HolderChampionBinding, Champion>(binding) {
         init {
-            binding.setOnClick {
-                onChampionClickListener?.invoke(element)
-            }
+            onCreateOnClick()
         }
 
         override fun onBind(element: Champion) {
             super.onBind(element)
             binding.champion = element
+        }
+
+        private fun onCreateOnClick() {
+            binding.setOnClick {
+                onChampionClickListener?.invoke(element)
+            }
         }
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WildRiftDictionary.Text" parent="Theme.WildRiftDictionary">
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.Text.Title" parent="Theme.WildRiftDictionary.Text">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:backgroundTint">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?attr/colorPrimaryVariant</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.Shape.Circle" parent="Theme.WildRiftDictionary">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.WildRiftDictionary.Splash" parent="Theme.WildRiftDictionary">
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+</resources>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <style name="Theme.WildRiftDictionary.Shape.Circle" parent="Theme.WildRiftDictionary">
-        <item name="cornerSize">50%</item>
-    </style>
-</resources>

@@ -13,10 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WildRiftDictionary"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.ChampionActivity"></activity>
+        <activity android:name=".activity.ChampionActivity">
+
+        </activity>
         <activity android:name=".activity.WebViewActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".activity.SplashActivity">
+        <activity
+            android:theme="@style/Theme.WildRiftDictionary.Splash"
+            android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

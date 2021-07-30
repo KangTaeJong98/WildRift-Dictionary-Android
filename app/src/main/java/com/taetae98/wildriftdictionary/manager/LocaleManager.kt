@@ -3,7 +3,7 @@ package com.taetae98.wildriftdictionary.manager
 import java.util.*
 
 object LocaleManager {
-    private fun getLocale(): Locale {
+    private fun locale(): Locale {
         return when(Locale.getDefault()) {
             Locale.KOREAN, Locale.KOREA -> {
                 Locale.KOREA
@@ -14,8 +14,8 @@ object LocaleManager {
         }
     }
 
-    fun getSmallToBig(): String {
-        return when(getLocale()) {
+    fun string(toLower: Boolean = false): String {
+        val locale = when(locale()) {
             Locale.KOREA -> {
                 "ko-KR"
             }
@@ -23,22 +23,14 @@ object LocaleManager {
                 "en-US"
             }
             else -> {
-                throw IllegalStateException()
+                ""
             }
         }
-    }
 
-    fun getSmallToSmall(): String {
-        return when(getLocale()) {
-            Locale.KOREA -> {
-                "ko-kr"
-            }
-            Locale.US -> {
-                "en-us"
-            }
-            else -> {
-                throw IllegalStateException()
-            }
+        return if (toLower) {
+            locale.lowercase()
+        } else {
+            locale
         }
     }
 }

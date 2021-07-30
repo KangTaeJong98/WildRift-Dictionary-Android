@@ -22,6 +22,8 @@ class SkillAdapter : BaseAdapter<Skill>(itemCallback) {
         }
     }
 
+    var onSkillClickListener: ((Skill) -> Unit)? = null
+
     init {
         setHasStableIds(true)
     }
@@ -39,9 +41,19 @@ class SkillAdapter : BaseAdapter<Skill>(itemCallback) {
     }
 
     inner class SkillHolder(binding: HolderSkillBinding) : BaseHolder<HolderSkillBinding, Skill>(binding) {
+        init {
+            onCreateOnClick()
+        }
+
         override fun onBind(element: Skill) {
             super.onBind(element)
             binding.skill = element
+        }
+
+        private fun onCreateOnClick() {
+            binding.setOnClick {
+                onSkillClickListener?.invoke(element)
+            }
         }
     }
 }

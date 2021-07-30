@@ -41,9 +41,19 @@ class SpellAdapter : BaseAdapter<Spell>(itemCallback) {
     }
 
     inner class SpellHolder(binding: HolderSpellBinding) : BaseHolder<HolderSpellBinding, Spell>(binding) {
+        init {
+            onCreateOnClick()
+        }
+
         override fun onBind(element: Spell) {
             super.onBind(element)
             binding.spell = element
+        }
+
+        private fun onCreateOnClick() {
+            binding.setOnClick {
+                onSpellClickListener?.invoke(element)
+            }
         }
     }
 }

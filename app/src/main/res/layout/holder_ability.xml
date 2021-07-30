@@ -16,13 +16,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.WildRiftDictionary.Text"
+            android:background="?attr/colorPrimary"
             android:text="@{ability.name}"
-            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnPrimary"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/name"/>
         <com.google.android.material.textview.MaterialTextView
+            style="@style/Theme.WildRiftDictionary.Text"
+            android:background="@color/white"
             android:text="@{ability.value}"
-            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="@string/value"/>
     </LinearLayout>
