@@ -61,6 +61,9 @@ class ChampionInformationFragment : BindingFragment<FragmentChampionInformationB
     private val skillAdapter by lazy {
         SkillAdapter().apply {
             submitList(viewModel.information.value?.skill)
+            onSkillClickListener = {
+                findNavController().navigate(ChampionInformationFragmentDirections.actionChampionInformationFragmentToSkillDialog(it))
+            }
         }
     }
 

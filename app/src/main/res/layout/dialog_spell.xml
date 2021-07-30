@@ -29,16 +29,20 @@
             style="@style/Theme.WildRiftDictionary.Element.Name"
             android:id="@+id/name_text_view"
             android:text="@{spell.name}"
+            android:padding="0dp"
+            android:layout_marginStart="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/image_view"
             app:layout_constraintStart_toEndOf="@id/image_view"
-            app:layout_constraintBottom_toTopOf="@id/cost_text_view"
+            app:layout_constraintBottom_toTopOf="@id/cooltime_text_view"
             tools:text="@string/name"/>
 
         <com.google.android.material.textview.MaterialTextView
             style="@style/Theme.WildRiftDictionary.Element.CoolTime"
-            android:id="@+id/cost_text_view"
+            android:id="@+id/cooltime_text_view"
+            android:padding="0dp"
+            android:layout_marginStart="10dp"
             android:text="@{@string/second(spell.cooltime)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
