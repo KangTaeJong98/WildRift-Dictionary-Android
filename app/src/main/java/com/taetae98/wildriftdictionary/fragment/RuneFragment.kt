@@ -1,9 +1,7 @@
 package com.taetae98.wildriftdictionary.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.taetae98.wildriftdictionary.R
 import com.taetae98.wildriftdictionary.adapter.RuneAdapter
@@ -21,7 +19,7 @@ class RuneFragment : BindingFragment<FragmentRuneBinding>(R.layout.fragment_rune
 
     private val keyStoneAdapter by lazy {
         RuneAdapter().apply {
-            submitList(runeRepository.findAll().filter { it.group == Rune.Group.KEY_STONE })
+            submitList(runeRepository.findByGroup(Rune.Group.KEY_STONE))
             onRuneClickListener = {
                 findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
             }
@@ -30,7 +28,7 @@ class RuneFragment : BindingFragment<FragmentRuneBinding>(R.layout.fragment_rune
 
     private val dominationAdapter by lazy {
         RuneAdapter().apply {
-            submitList(runeRepository.findAll().filter { it.group == Rune.Group.DOMINATION })
+            submitList(runeRepository.findByGroup(Rune.Group.DOMINATION))
             onRuneClickListener = {
                 findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
             }
@@ -39,7 +37,7 @@ class RuneFragment : BindingFragment<FragmentRuneBinding>(R.layout.fragment_rune
 
     private val resolveAdapter by lazy {
         RuneAdapter().apply {
-            submitList(runeRepository.findAll().filter { it.group == Rune.Group.RESOLVE })
+            submitList(runeRepository.findByGroup(Rune.Group.RESOLVE))
             onRuneClickListener = {
                 findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
             }
@@ -48,9 +46,29 @@ class RuneFragment : BindingFragment<FragmentRuneBinding>(R.layout.fragment_rune
 
     private val inspirationAdapter by lazy {
         RuneAdapter().apply {
-            submitList(runeRepository.findAll().filter { it.group == Rune.Group.INSPIRATION })
+            submitList(runeRepository.findByGroup(Rune.Group.INSPIRATION))
             onRuneClickListener = {
                 findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
+            }
+        }
+    }
+
+    init {
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_rune_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.search -> {
+                findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneSearchDialog())
+                true
+            }
+            else -> {
+                false
             }
         }
     }

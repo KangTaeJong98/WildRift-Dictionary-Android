@@ -10,9 +10,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RuneRepository @Inject constructor(
-
-) {
+class RuneRepository @Inject constructor() {
     private lateinit var data: List<Rune>
 
     suspend fun update() {
@@ -53,7 +51,15 @@ class RuneRepository @Inject constructor(
         data = arrayList
     }
 
-    fun findAll(): List<Rune> {
+    fun findLikeName(name: String): List<Rune> {
+        return findAll().filter { it.name.contains(name) }
+    }
+
+    fun findByGroup(group: Rune.Group): List<Rune> {
+        return findAll().filter { it.group == group }
+    }
+
+    private fun findAll(): List<Rune> {
         if (!::data.isInitialized) {
             runBlocking {
                 update()
