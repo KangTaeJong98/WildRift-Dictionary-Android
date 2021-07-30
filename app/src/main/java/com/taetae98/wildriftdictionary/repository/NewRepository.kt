@@ -17,7 +17,7 @@ class NewRepository @Inject constructor() {
         withContext(Dispatchers.IO) {
             val arrayList = ArrayList<News>()
 
-            Jsoup.connect("https://wildrift.leagueoflegends.com/${LocaleManager.getSmallToSmall()}/news/").get()
+            Jsoup.connect("https://wildrift.leagueoflegends.com/${LocaleManager.string(true)}/news/").get()
                 .select("a.articleCardWrapper-1JIOy")
                 .forEach {
                     val image = it.select("img.image-NeGf2").attr("src")

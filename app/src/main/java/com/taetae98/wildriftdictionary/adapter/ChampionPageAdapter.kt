@@ -64,18 +64,16 @@ class ChampionPageAdapter @Inject constructor(
     inner class ChampionPageHolder(binding: HolderChampionPageBinding) : BaseHolder<HolderChampionPageBinding, ChampionPage>(binding) {
         private val championAdapter by lazy {
             ChampionAdapter().apply {
+                CoroutineScope(Dispatchers.Main).launch {
+                    if (element.line == Champion.Line.ALL) {
+                        submitList(championRepository.findAll())
+                    } else {
+                        submitList(championRepository.findAll().filter { it.lines.contains(element.line) })
+                    }
+                }
+
                 onChampionClickListener = {
                     this@ChampionPageAdapter.onChampionClickListener?.invoke(it)
-                }
-            }
-        }
-
-        init {
-            CoroutineScope(Dispatchers.Main).launch {
-                if (element.line == Champion.Line.ALL) {
-                    championAdapter.submitList(championRepository.findAll())
-                } else {
-                    championAdapter.submitList(championRepository.findAll().filter { it.lines.contains(element.line) })
                 }
             }
         }

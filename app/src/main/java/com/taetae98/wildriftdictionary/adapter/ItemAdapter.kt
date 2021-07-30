@@ -41,9 +41,19 @@ class ItemAdapter : BaseAdapter<Item>(itemCallback) {
     }
 
     inner class ItemHolder(binding: HolderItemBinding) : BaseHolder<HolderItemBinding, Item>(binding) {
+        init {
+            onCreateOnClick()
+        }
+
         override fun onBind(element: Item) {
             super.onBind(element)
             binding.item = element
+        }
+
+        private fun onCreateOnClick() {
+            binding.setOnClick {
+                onItemClickListener?.invoke(element)
+            }
         }
     }
 }

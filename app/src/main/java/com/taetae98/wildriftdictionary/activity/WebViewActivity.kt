@@ -12,6 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class WebViewActivity : BindingActivity<ActivityWebViewBinding>(R.layout.activity_web_view) {
+    private val viewModel by viewModels<WebViewViewModel>()
+
     override val appBarConfiguration by lazy {
         AppBarConfiguration(
             setOf(
@@ -20,7 +22,6 @@ class WebViewActivity : BindingActivity<ActivityWebViewBinding>(R.layout.activit
         )
     }
 
-    private val viewModel by viewModels<WebViewViewModel>()
     private val args by navArgs<WebViewActivityArgs>()
     private val url by lazy { args.url }
 

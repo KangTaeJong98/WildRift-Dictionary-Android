@@ -16,9 +16,9 @@ class ChampionRepository @Inject constructor() {
     suspend fun update() {
         withContext(Dispatchers.IO) {
             val arrayList = ArrayList<Champion>()
-            val document = Jsoup.connect("https://poro.gg/champions?hl=${LocaleManager.getSmallToBig()}").get()
+            val document = Jsoup.connect("https://poro.gg/champions?hl=${LocaleManager.string()}").get()
 
-            Jsoup.connect("https://poro.gg/wildrift/champions/garen?hl=${LocaleManager.getSmallToBig()}").get()
+            Jsoup.connect("https://poro.gg/wildrift/champions/garen?hl=${LocaleManager.string()}").get()
                 .select("a.wildrift-champion > img.wildrift-champion__image")
                 .forEach {
                     val id = it.attr("src").substringAfter("champion/").substringBefore(".").trim()

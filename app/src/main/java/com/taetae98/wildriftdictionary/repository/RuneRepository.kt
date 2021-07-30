@@ -18,7 +18,7 @@ class RuneRepository @Inject constructor(
     suspend fun update() {
         val arrayList = ArrayList<Rune>()
         withContext(Dispatchers.IO) {
-            Jsoup.connect("https://poro.gg/wildrift/runes?hl=${LocaleManager.getSmallToBig()}").get()
+            Jsoup.connect("https://poro.gg/wildrift/runes?hl=${LocaleManager.string()}").get()
                 .select("div.wildrift-runes__group")
                 .forEach { groupElement ->
                     val group = when (groupElement.select("header.wildrift-runes__group__header").text()) {

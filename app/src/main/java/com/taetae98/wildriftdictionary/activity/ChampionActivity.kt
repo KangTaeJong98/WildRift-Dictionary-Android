@@ -31,6 +31,10 @@ class ChampionActivity : BindingActivity<ActivityChampionBinding>(R.layout.activ
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        onCreateViewModel()
+    }
+
+    private fun onCreateViewModel() {
         viewModel.champion.value = champion
         viewModel.information.value = information
     }

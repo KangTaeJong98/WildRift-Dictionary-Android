@@ -22,6 +22,8 @@ class RuneAdapter : BaseAdapter<Rune>(itemCallback) {
         }
     }
 
+    var onRuneClickListener: ((Rune) -> Unit)? = null
+
     init {
         setHasStableIds(true)
     }
@@ -39,9 +41,19 @@ class RuneAdapter : BaseAdapter<Rune>(itemCallback) {
     }
 
     inner class RuneHolder(binding: HolderRuneBinding) : BaseHolder<HolderRuneBinding, Rune>(binding) {
+        init {
+            onCreateOnClick()
+        }
+
         override fun onBind(element: Rune) {
             super.onBind(element)
             binding.rune = element
+        }
+
+        private fun onCreateOnClick() {
+            binding.setOnClick {
+                onRuneClickListener?.invoke(element)
+            }
         }
     }
 }

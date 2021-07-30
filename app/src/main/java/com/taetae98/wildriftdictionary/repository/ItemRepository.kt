@@ -16,7 +16,7 @@ class ItemRepository @Inject constructor() {
     suspend fun update() {
         val arrayList = ArrayList<Item>()
         withContext(Dispatchers.IO) {
-            Jsoup.connect("https://poro.gg/wildrift/items?hl=${LocaleManager.getSmallToBig()}").get()
+            Jsoup.connect("https://poro.gg/wildrift/items?hl=${LocaleManager.string()}").get()
                 .select("div.mb-3")
                 .forEach { typeElement ->
                     val type = when (typeElement.select("h2.wildrift-items__group").text()) {
