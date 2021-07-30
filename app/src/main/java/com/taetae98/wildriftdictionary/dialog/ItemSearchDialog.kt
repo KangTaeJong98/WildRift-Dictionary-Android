@@ -7,27 +7,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.taetae98.wildriftdictionary.R
-import com.taetae98.wildriftdictionary.adapter.ChampionAdapter
+import com.taetae98.wildriftdictionary.adapter.ItemAdapter
 import com.taetae98.wildriftdictionary.databinding.BindingDialog
-import com.taetae98.wildriftdictionary.databinding.DialogChampionSearchBinding
-import com.taetae98.wildriftdictionary.repository.ChampionRepository
+import com.taetae98.wildriftdictionary.databinding.DialogItemSearchBinding
+import com.taetae98.wildriftdictionary.repository.ItemRepository
 import com.taetae98.wildriftdictionary.viewmodel.SearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ChampionSearchDialog : BindingDialog<DialogChampionSearchBinding>(R.layout.dialog_champion_search) {
+class ItemSearchDialog : BindingDialog<DialogItemSearchBinding>(R.layout.dialog_item_search) {
     private val viewModel by viewModels<SearchViewModel>()
-    private val championAdapter by lazy {
-        ChampionAdapter().apply {
-            onChampionClickListener = {
-                findNavController().navigate(ChampionSearchDialogDirections.actionChampionSearchDialogToChampionActivity(it))
+    private val itemAdapter by lazy {
+        ItemAdapter().apply {
+            onItemClickListener = {
+                findNavController().navigate(ItemSearchDialogDirections.actionItemSearchDialogToItemDialog(it))
             }
         }
     }
 
     @Inject
-    lateinit var championRepository: ChampionRepository
+    lateinit var itemRepository: ItemRepository
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -49,13 +49,13 @@ class ChampionSearchDialog : BindingDialog<DialogChampionSearchBinding>(R.layout
 
     private fun onCreateRecyclerView() {
         with(binding.recyclerView) {
-            adapter = championAdapter
+            adapter = itemAdapter
         }
     }
 
     private fun onCreateViewModelInput() {
         viewModel.input.observe(viewLifecycleOwner) {
-            championAdapter.submitList(championRepository.findLikeId(it))
+            itemAdapter.submitList(itemRepository.findLikeName(it))
         }
     }
 }

@@ -9,10 +9,8 @@ import com.taetae98.wildriftdictionary.R
 import com.taetae98.wildriftdictionary.base.BaseAdapter
 import com.taetae98.wildriftdictionary.base.BaseHolder
 import com.taetae98.wildriftdictionary.databinding.HolderItemPageBinding
-import com.taetae98.wildriftdictionary.decoration.SpacingItemDecoration
 import com.taetae98.wildriftdictionary.dto.Item
 import com.taetae98.wildriftdictionary.repository.ItemRepository
-import com.taetae98.wildriftdictionary.toDp
 import dagger.hilt.android.scopes.FragmentScoped
 import javax.inject.Inject
 
@@ -61,11 +59,6 @@ class ItemPageAdapter @Inject constructor(
     inner class ItemPageHolder(binding: HolderItemPageBinding) : BaseHolder<HolderItemPageBinding, ItemPage>(binding) {
         private val upgradedItemAdapter by lazy {
             ItemAdapter().apply {
-                submitList(
-                    itemRepository.findAll().filter {
-                        it.type == element.type && it.level == Item.Level.UPGRADED
-                    }
-                )
                 onItemClickListener = {
                     this@ItemPageAdapter.onItemClickListener?.invoke(it)
                 }
@@ -74,11 +67,6 @@ class ItemPageAdapter @Inject constructor(
 
         private val midItemAdapter by lazy {
             ItemAdapter().apply {
-                submitList(
-                    itemRepository.findAll().filter {
-                        it.type == element.type && it.level == Item.Level.MID
-                    }
-                )
                 onItemClickListener = {
                     this@ItemPageAdapter.onItemClickListener?.invoke(it)
                 }
@@ -87,11 +75,6 @@ class ItemPageAdapter @Inject constructor(
 
         private val enchantmentsItemAdapter by lazy {
             ItemAdapter().apply {
-                submitList(
-                    itemRepository.findAll().filter {
-                        it.type == element.type && it.level == Item.Level.ENCHANTMENTS
-                    }
-                )
                 onItemClickListener = {
                     this@ItemPageAdapter.onItemClickListener?.invoke(it)
                 }
@@ -100,11 +83,6 @@ class ItemPageAdapter @Inject constructor(
 
         private val basicItemAdapter by lazy {
             ItemAdapter().apply {
-                submitList(
-                    itemRepository.findAll().filter {
-                        it.type == element.type && it.level == Item.Level.BASIC
-                    }
-                )
                 onItemClickListener = {
                     this@ItemPageAdapter.onItemClickListener?.invoke(it)
                 }
@@ -125,24 +103,32 @@ class ItemPageAdapter @Inject constructor(
             with(binding.upgradedRecyclerView) {
                 adapter = upgradedItemAdapter
             }
+
+            upgradedItemAdapter.submitList(itemRepository.findByTypeAndLevel(element.type, Item.Level.UPGRADED))
         }
 
         private fun onCreateMidRecyclerView() {
             with(binding.midRecyclerView) {
                 adapter = midItemAdapter
             }
+
+            midItemAdapter.submitList(itemRepository.findByTypeAndLevel(element.type, Item.Level.MID))
         }
 
         private fun onCreateEnchantmentsRecyclerView() {
             with(binding.enchantmentsRecyclerView) {
                 adapter = enchantmentsItemAdapter
             }
+
+            enchantmentsItemAdapter.submitList(itemRepository.findByTypeAndLevel(element.type, Item.Level.ENCHANTMENTS))
         }
 
         private fun onCreateBasicRecyclerView() {
             with(binding.basicRecyclerView) {
                 adapter = basicItemAdapter
             }
+
+            basicItemAdapter.submitList(itemRepository.findByTypeAndLevel(element.type, Item.Level.BASIC))
         }
     }
 

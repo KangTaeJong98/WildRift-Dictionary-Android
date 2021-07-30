@@ -67,27 +67,25 @@ class ChampionRepository @Inject constructor() {
         }
     }
 
-    fun findByLines(line: Champion.Line): List<Champion> {
+    private fun findAll(): List<Champion> {
         if (!::data.isInitialized) {
             runBlocking {
                 update()
             }
         }
 
+        return data
+    }
+
+    fun findByLines(line: Champion.Line): List<Champion> {
         return if (line == Champion.Line.ALL) {
-            data
+            findAll()
         } else {
-            data.filter { it.lines.contains(line) }
+            findAll().filter { it.lines.contains(line) }
         }
     }
 
-    fun findById(id: String): List<Champion> {
-        if (!::data.isInitialized) {
-            runBlocking {
-                update()
-            }
-        }
-
-        return data.filter { it.id.contains(id) || it.name.contains(id) }
+    fun findLikeId(id: String): List<Champion> {
+        return findAll().filter { it.id.contains(id) || it.name.contains(id) }
     }
 }
