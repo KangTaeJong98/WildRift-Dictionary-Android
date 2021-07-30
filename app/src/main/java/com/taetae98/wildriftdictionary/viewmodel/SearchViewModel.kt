@@ -6,8 +6,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class WebViewViewModel @Inject constructor(
+class SearchViewModel @Inject constructor(
     stateHandle: SavedStateHandle
 ) : ViewModel() {
-    val url by lazy { stateHandle.getLiveData("URL", "") }
+    val input by lazy { stateHandle.getLiveData("INPUT", "") }
 }

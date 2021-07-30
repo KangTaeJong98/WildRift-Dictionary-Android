@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.taetae98.wildriftdictionary.viewmodel.SearchViewModel" />
+    </data>
+
+    <LinearLayout
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.textfield.TextInputLayout
+            android:background="?attr/colorPrimaryVariant"
+            app:boxBackgroundColor="?attr/colorPrimaryVariant"
+            app:hintTextColor="?attr/colorOnPrimary"
+            android:textColorHint="?attr/colorOnPrimary"
+            android:hint="@string/name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            app:endIconMode="clear_text"
+            app:endIconTint="?attr/colorOnPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:text="@={viewModel.input}"
+                android:inputType="text"
+                android:textColor="?attr/colorOnPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/name"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/holder_champion"/>
+    </LinearLayout>
+</layout>
