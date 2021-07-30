@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">와일드 리프트\n백과사전</string>
+    <string name="news">공지사항</string>
+    <string name="champion">챔피언</string>
+    <string name="item">아이템</string>
+    <string name="rune">룬</string>
+    <string name="image">이미지</string>
+    <string name="upgraded">코어 아이템</string>
+    <string name="mid_tier">중간 아이템</string>
+    <string name="enchantments">마법 부여 아이템</string>
+    <string name="basic">기본 아이템</string>
+    <string name="key_stone">핵심</string>
+    <string name="domination">지배</string>
+    <string name="resolve">결의</string>
+    <string name="inspiration">영감</string>
+    <string name="recommend_item">추천 아이템</string>
+    <string name="recommend_rune">추천 룬</string>
+    <string name="recommend_spell">추천 스펠</string>
+    <string name="ability">능력치</string>
+    <string name="sub_ability">보조 능력치</string>
+    <string name="skill">스킬</string>
+    <string name="universe">유니버스</string>
+    <string name="name">이름</string>
+    <string name="value">값</string>
+    <string name="stats">스텟</string>
+    <string name="description">설명</string>
+    <string name="type">타입</string>
+    <string name="second">%s초</string>
+    <string name="search">검색</string>
+</resources>
