@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_championInformationFragment_to_spellDialog"
             app:destination="@id/spellDialog" />
+        <action
+            android:id="@+id/action_championInformationFragment_to_skillDialog"
+            app:destination="@id/skillDialog" />
     </fragment>
     <activity
         android:id="@+id/webViewActivity"
@@ -53,5 +56,13 @@
         <argument
             android:name="spell"
             app:argType="com.taetae98.wildriftdictionary.dto.Spell" />
+    </dialog>
+    <dialog
+        android:id="@+id/skillDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.SkillDialog"
+        tools:layout="@layout/dialog_skill">
+        <argument
+            android:name="skill"
+            app:argType="com.taetae98.wildriftdictionary.dto.Skill" />
     </dialog>
 </navigation>

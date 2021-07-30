@@ -79,19 +79,18 @@ class ChampionInformationRepository @Inject constructor(
 
             val data = div[1].toString()
             val array = div[1].text().split(" ")
-
             val cooltime = array.first()
             val type = when {
-                data.contains("<i class=\"fas fa-tint\" style=\"margin-left: 6px; color: #207ac7\"></i>") -> {
+                data.contains("fa-tint") -> {
                     Skill.Type.MP
                 }
-                data.contains("<i class=\"fas fa-heart\" style=\"margin-left: 6px; color: #11b288\"></i>") -> {
+                data.contains("fa-heart") -> {
                     Skill.Type.HP
                 }
-                data.contains("<i class=\"fas fa-bolt\" style=\"margin-left: 6px; color: #ffc528\"></i>") -> {
+                data.contains("fa-bolt") -> {
                     Skill.Type.ENERGY
                 }
-                data.contains("<i class=\"fas fa-fire\" style=\"margin-left: 6px; color: #ffc528\"></i>") -> {
+                data.contains("fa-fire") -> {
                     Skill.Type.ANGER
                 }
                 else -> {
@@ -103,6 +102,7 @@ class ChampionInformationRepository @Inject constructor(
             } else {
                 array.last()
             }
+
             arrayList.add(Skill(image, name, cooltime, cost, type, description))
         }
 
