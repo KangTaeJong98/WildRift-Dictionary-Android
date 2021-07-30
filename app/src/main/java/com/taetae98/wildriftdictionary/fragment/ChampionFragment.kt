@@ -1,9 +1,7 @@
 package com.taetae98.wildriftdictionary.fragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.taetae98.wildriftdictionary.R
@@ -17,6 +15,26 @@ import javax.inject.Inject
 class ChampionFragment : BindingFragment<FragmentChampionBinding>(R.layout.fragment_champion) {
     @Inject
     lateinit var championPageAdapter: ChampionPageAdapter
+
+    init {
+        setHasOptionsMenu(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_champion_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.search -> {
+                findNavController().navigate(ChampionFragmentDirections.actionChampionFragmentToChampionSearchDialog())
+                true
+            }
+            else -> {
+                false
+            }
+        }
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)

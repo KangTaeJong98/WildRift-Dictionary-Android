@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_championFragment_to_championActivity"
             app:destination="@id/championActivity" />
+        <action
+            android:id="@+id/action_championFragment_to_championSearchDialog"
+            app:destination="@id/championSearchDialog" />
     </fragment>
     <fragment
         android:id="@+id/itemFragment"
@@ -72,5 +75,13 @@
         <argument
             android:name="rune"
             app:argType="com.taetae98.wildriftdictionary.dto.Rune" />
+    </dialog>
+    <dialog
+        android:id="@+id/championSearchDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.ChampionSearchDialog"
+        tools:layout="@layout/dialog_champion_search" >
+        <action
+            android:id="@+id/action_championSearchDialog_to_championActivity"
+            app:destination="@id/championActivity" />
     </dialog>
 </navigation>

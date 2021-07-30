@@ -11,6 +11,6 @@ import javax.inject.Inject
 class ChampionViewModel @Inject constructor(
     stateHandle: SavedStateHandle
 ) : ViewModel() {
-    val champion = stateHandle.getLiveData<Champion>("CHAMPION")
-    val information = stateHandle.getLiveData<ChampionInformation>("INFORMATION")
+    val champion by lazy { stateHandle.getLiveData<Champion>("CHAMPION") }
+    val information by lazy { stateHandle.getLiveData<ChampionInformation>("INFORMATION") }
 }

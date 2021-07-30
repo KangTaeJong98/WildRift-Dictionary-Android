@@ -80,4 +80,14 @@ class ChampionRepository @Inject constructor() {
             data.filter { it.lines.contains(line) }
         }
     }
+
+    fun findById(id: String): List<Champion> {
+        if (!::data.isInitialized) {
+            runBlocking {
+                update()
+            }
+        }
+
+        return data.filter { it.id.contains(id) || it.name.contains(id) }
+    }
 }
