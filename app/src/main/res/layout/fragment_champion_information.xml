@@ -30,7 +30,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@drawable/image_garen_splash"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cost_card_view"
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/Theme.WildRiftDictionary.Text.Cost"
+                        style="@style/Theme.WildRiftDictionary.Element"
                         android:text="@{viewModel.information.cost}"
                         android:textColor="#FF0AE1FB"
                         android:drawableStart="@drawable/ic_cost_24"
@@ -56,7 +57,7 @@
                         tools:text="1000"/>
 
                     <com.google.android.material.textview.MaterialTextView
-                        style="@style/Theme.WildRiftDictionary.Text.Cost"
+                        style="@style/Theme.WildRiftDictionary.Element"
                         android:text="@{viewModel.information.wildCore}"
                         android:textColor="#FFFFFF"
                         android:drawableStart="@drawable/ic_wild_core_24"
@@ -101,7 +102,8 @@
                         app:layout_constraintTop_toBottomOf="@id/item_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_item" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -140,7 +142,8 @@
                         app:layout_constraintTop_toBottomOf="@id/rune_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_rune"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -179,7 +182,8 @@
                         app:layout_constraintTop_toBottomOf="@id/spell_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_spell"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -215,7 +219,8 @@
                         app:layout_constraintTop_toBottomOf="@id/ability_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_ability"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -251,7 +256,8 @@
                         app:layout_constraintTop_toBottomOf="@id/sub_ability_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_ability"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -288,7 +294,8 @@
                         app:layout_constraintTop_toBottomOf="@id/skill_text_view"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        tools:listitem="@layout/holder_skill"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

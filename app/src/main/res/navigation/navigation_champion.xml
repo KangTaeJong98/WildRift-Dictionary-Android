@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_championInformationFragment_to_webViewActivity"
             app:destination="@id/webViewActivity" />
+        <action
+            android:id="@+id/action_championInformationFragment_to_itemDialog"
+            app:destination="@id/itemDialog" />
     </fragment>
     <activity
         android:id="@+id/webViewActivity"
@@ -21,5 +24,13 @@
             android:name="url"
             app:argType="string" />
     </activity>
+    <dialog
+        android:id="@+id/itemDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.ItemDialog"
+        tools:layout="@layout/dialog_item">
+        <argument
+            android:name="item"
+            app:argType="com.taetae98.wildriftdictionary.dto.Item" />
+    </dialog>
 
 </navigation>

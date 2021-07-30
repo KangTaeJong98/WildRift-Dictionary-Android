@@ -22,6 +22,9 @@ class ChampionInformationFragment : BindingFragment<FragmentChampionInformationB
     private val itemAdapter by lazy {
         ItemAdapter().apply {
             submitList(viewModel.information.value?.item)
+            onItemClickListener = {
+                findNavController().navigate(ChampionInformationFragmentDirections.actionChampionInformationFragmentToItemDialog(it))
+            }
         }
     }
 
