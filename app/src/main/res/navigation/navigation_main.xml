@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_runeFragment_to_runeDialog"
             app:destination="@id/runeDialog" />
+        <action
+            android:id="@+id/action_runeFragment_to_runeSearchDialog"
+            app:destination="@id/runeSearchDialog" />
     </fragment>
     <activity
         android:id="@+id/webViewActivity"
@@ -94,5 +97,13 @@
         <action
             android:id="@+id/action_itemSearchDialog_to_itemDialog"
             app:destination="@id/itemDialog" />
+    </dialog>
+    <dialog
+        android:id="@+id/runeSearchDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.RuneSearchDialog"
+        tools:layout="@layout/dialog_rune_search" >
+        <action
+            android:id="@+id/action_runeSearchDialog_to_runeDialog"
+            app:destination="@id/runeDialog" />
     </dialog>
 </navigation>

@@ -123,11 +123,7 @@ class ChampionInformationRepository @Inject constructor(
         val arrayList = ArrayList<Rune>()
         document.select("div.wildrift-detail__recommend__item__content")[1].children().forEach {
             val name = it.attr("alt")
-            runeRepository.findAll().find { rune ->
-                rune.name == name
-            }?.let { rune ->
-                arrayList.add(rune)
-            }
+            arrayList.addAll(runeRepository.findLikeName(name))
         }
 
         return arrayList
