@@ -33,6 +33,8 @@ class ChampionPageAdapter @Inject constructor(
         }
     }
 
+    var onChampionClickListener: ((Champion) -> Unit)? = null
+
     init {
         setHasStableIds(true)
         submitList(
@@ -60,7 +62,13 @@ class ChampionPageAdapter @Inject constructor(
     }
 
     inner class ChampionPageHolder(binding: HolderChampionPageBinding) : BaseHolder<HolderChampionPageBinding, ChampionPage>(binding) {
-        private val championAdapter by lazy { ChampionAdapter() }
+        private val championAdapter by lazy {
+            ChampionAdapter().apply {
+                onChampionClickListener = {
+                    this@ChampionPageAdapter.onChampionClickListener?.invoke(it)
+                }
+            }
+        }
 
         init {
             CoroutineScope(Dispatchers.Main).launch {

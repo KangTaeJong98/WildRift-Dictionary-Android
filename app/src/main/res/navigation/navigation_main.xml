@@ -18,7 +18,11 @@
         android:id="@+id/championFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.ChampionFragment"
         android:label="@string/champion"
-        tools:layout="@layout/fragment_champion"/>
+        tools:layout="@layout/fragment_champion">
+        <action
+            android:id="@+id/action_championFragment_to_championActivity"
+            app:destination="@id/championActivity" />
+    </fragment>
     <fragment
         android:id="@+id/itemFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.ItemFragment"
@@ -36,5 +40,13 @@
         <argument
             android:name="url"
             app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/championActivity"
+        android:name="com.taetae98.wildriftdictionary.activity.ChampionActivity"
+        tools:layout="@layout/activity_champion">
+        <argument
+            android:name="champion"
+            app:argType="com.taetae98.wildriftdictionary.dto.Champion" />
     </activity>
 </navigation>

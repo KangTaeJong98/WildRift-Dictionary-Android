@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_champion"
+    app:startDestination="@id/championInformationFragment">
+
+    <fragment
+        android:id="@+id/championInformationFragment"
+        android:name="com.taetae98.wildriftdictionary.fragment.ChampionInformationFragment"
+        tools:layout="@layout/fragment_champion_information">
+        <action
+            android:id="@+id/action_championInformationFragment_to_webViewActivity"
+            app:destination="@id/webViewActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/webViewActivity"
+        android:name="com.taetae98.wildriftdictionary.activity.WebViewActivity"
+        tools:layout="@layout/activity_web_view">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </activity>
+
+</navigation>

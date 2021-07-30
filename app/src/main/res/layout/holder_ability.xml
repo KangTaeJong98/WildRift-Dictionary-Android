@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="ability"
+            type="com.taetae98.wildriftdictionary.dto.Ability" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+            android:text="@{ability.name}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/name"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:text="@{ability.value}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="@string/value"/>
+    </LinearLayout>
+</layout>
