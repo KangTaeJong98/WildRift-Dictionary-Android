@@ -22,4 +22,6 @@
     <string name="universe">Universe</string>
     <string name="name">Name</string>
     <string name="value">Value</string>
+    <string name="stats">Stats</string>
+    <string name="description">Description</string>
 </resources>

@@ -27,7 +27,11 @@
         android:id="@+id/itemFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.ItemFragment"
         android:label="@string/item"
-        tools:layout="@layout/fragment_item"/>
+        tools:layout="@layout/fragment_item">
+        <action
+            android:id="@+id/action_itemFragment_to_itemDialog"
+            app:destination="@id/itemDialog" />
+    </fragment>
     <fragment
         android:id="@+id/runeFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.RuneFragment"
@@ -49,4 +53,12 @@
             android:name="champion"
             app:argType="com.taetae98.wildriftdictionary.dto.Champion" />
     </activity>
+    <dialog
+        android:id="@+id/itemDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.ItemDialog"
+        tools:layout="@layout/dialog_item">
+        <argument
+            android:name="item"
+            app:argType="com.taetae98.wildriftdictionary.dto.Item" />
+    </dialog>
 </navigation>
