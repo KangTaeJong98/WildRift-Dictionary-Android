@@ -26,6 +26,8 @@ class ChampionAdapter : BaseAdapter<Champion>(itemCallback)  {
         setHasStableIds(true)
     }
 
+    var onChampionClickListener: ((Champion) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseHolder<out ViewDataBinding, Champion> {
         return ChampionHolder(
             HolderChampionBinding.inflate(
@@ -39,6 +41,12 @@ class ChampionAdapter : BaseAdapter<Champion>(itemCallback)  {
     }
 
     inner class ChampionHolder(binding: HolderChampionBinding) : BaseHolder<HolderChampionBinding, Champion>(binding) {
+        init {
+            binding.setOnClick {
+                onChampionClickListener?.invoke(element)
+            }
+        }
+
         override fun onBind(element: Champion) {
             super.onBind(element)
             binding.champion = element

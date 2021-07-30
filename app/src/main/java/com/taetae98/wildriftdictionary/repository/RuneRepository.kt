@@ -55,7 +55,7 @@ class RuneRepository @Inject constructor(
 
     fun findAll(): List<Rune> {
         if (!::data.isInitialized) {
-            runBlocking(Dispatchers.IO) {
+            runBlocking {
                 update()
             }
         }

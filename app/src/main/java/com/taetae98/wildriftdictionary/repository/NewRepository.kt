@@ -37,7 +37,7 @@ class NewRepository @Inject constructor() {
 
     fun findAll(): List<News> {
         if (!::data.isInitialized) {
-            runBlocking(Dispatchers.IO) {
+            runBlocking {
                 update()
             }
         }

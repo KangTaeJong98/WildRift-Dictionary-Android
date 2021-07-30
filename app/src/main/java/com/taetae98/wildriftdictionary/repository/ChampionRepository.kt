@@ -56,7 +56,7 @@ class ChampionRepository @Inject constructor() {
 
     fun findAll(): List<Champion> {
         if (!::data.isInitialized) {
-            runBlocking(Dispatchers.IO) {
+            runBlocking {
                 update()
             }
         }

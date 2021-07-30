@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayoutMediator
 import com.taetae98.wildriftdictionary.R
 import com.taetae98.wildriftdictionary.adapter.ChampionPageAdapter
@@ -28,6 +29,10 @@ class ChampionFragment : BindingFragment<FragmentChampionBinding>(R.layout.fragm
     private fun onCreateViewPager() {
         with(binding.viewPager) {
             adapter = championPageAdapter
+        }
+
+        championPageAdapter.onChampionClickListener = {
+            findNavController().navigate(ChampionFragmentDirections.actionChampionFragmentToChampionActivity(it))
         }
     }
 

@@ -13,4 +13,13 @@
     <string name="domination">Domination</string>
     <string name="resolve">Resolve</string>
     <string name="inspiration">Inspiration</string>
+    <string name="recommend_item">Recommend Item</string>
+    <string name="recommend_rune">Recommend Rune</string>
+    <string name="recommend_spell">Recommend Spell</string>
+    <string name="ability">Ability</string>
+    <string name="sub_ability">Sub Ability</string>
+    <string name="skill">Skill</string>
+    <string name="universe">Universe</string>
+    <string name="name">Name</string>
+    <string name="value">Value</string>
 </resources>

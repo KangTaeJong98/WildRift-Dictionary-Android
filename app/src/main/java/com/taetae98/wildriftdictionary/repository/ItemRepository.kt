@@ -73,7 +73,7 @@ class ItemRepository @Inject constructor() {
 
     fun findAll(): List<Item> {
         if (!::data.isInitialized) {
-            runBlocking(Dispatchers.IO) {
+            runBlocking {
                 update()
             }
         }
