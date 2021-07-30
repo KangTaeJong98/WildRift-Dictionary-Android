@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.taetae98.wildriftdictionary.R
 import com.taetae98.wildriftdictionary.adapter.RuneAdapter
 import com.taetae98.wildriftdictionary.databinding.BindingFragment
@@ -21,24 +22,36 @@ class RuneFragment : BindingFragment<FragmentRuneBinding>(R.layout.fragment_rune
     private val keyStoneAdapter by lazy {
         RuneAdapter().apply {
             submitList(runeRepository.findAll().filter { it.group == Rune.Group.KEY_STONE })
+            onRuneClickListener = {
+                findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
+            }
         }
     }
 
     private val dominationAdapter by lazy {
         RuneAdapter().apply {
             submitList(runeRepository.findAll().filter { it.group == Rune.Group.DOMINATION })
+            onRuneClickListener = {
+                findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
+            }
         }
     }
 
     private val resolveAdapter by lazy {
         RuneAdapter().apply {
             submitList(runeRepository.findAll().filter { it.group == Rune.Group.RESOLVE })
+            onRuneClickListener = {
+                findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
+            }
         }
     }
 
     private val inspirationAdapter by lazy {
         RuneAdapter().apply {
             submitList(runeRepository.findAll().filter { it.group == Rune.Group.INSPIRATION })
+            onRuneClickListener = {
+                findNavController().navigate(RuneFragmentDirections.actionRuneFragmentToRuneDialog(it))
+            }
         }
     }
 

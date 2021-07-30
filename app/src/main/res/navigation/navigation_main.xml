@@ -36,7 +36,11 @@
         android:id="@+id/runeFragment"
         android:name="com.taetae98.wildriftdictionary.fragment.RuneFragment"
         android:label="@string/rune"
-        tools:layout="@layout/fragment_rune"/>
+        tools:layout="@layout/fragment_rune">
+        <action
+            android:id="@+id/action_runeFragment_to_runeDialog"
+            app:destination="@id/runeDialog" />
+    </fragment>
     <activity
         android:id="@+id/webViewActivity"
         android:name="com.taetae98.wildriftdictionary.activity.WebViewActivity"
@@ -60,5 +64,13 @@
         <argument
             android:name="item"
             app:argType="com.taetae98.wildriftdictionary.dto.Item" />
+    </dialog>
+    <dialog
+        android:id="@+id/runeDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.RuneDialog"
+        tools:layout="@layout/dialog_rune" >
+        <argument
+            android:name="rune"
+            app:argType="com.taetae98.wildriftdictionary.dto.Rune" />
     </dialog>
 </navigation>

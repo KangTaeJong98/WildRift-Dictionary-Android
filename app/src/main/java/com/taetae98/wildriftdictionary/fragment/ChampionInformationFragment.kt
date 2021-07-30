@@ -31,6 +31,9 @@ class ChampionInformationFragment : BindingFragment<FragmentChampionInformationB
     private val runeAdapter by lazy {
         RuneAdapter().apply {
             submitList(viewModel.information.value?.rune)
+            onRuneClickListener = {
+                findNavController().navigate(ChampionInformationFragmentDirections.actionChampionInformationFragmentToRuneDialog(it))
+            }
         }
     }
 
