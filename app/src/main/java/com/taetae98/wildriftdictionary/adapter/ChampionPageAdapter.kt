@@ -55,13 +55,12 @@ class ChampionPageAdapter @Inject constructor(
     }
 
     override fun getItemId(position: Int): Long {
-        return getItem(position).line.hashCode().toLong()
+        return getItem(position).hashCode().toLong()
     }
 
     inner class ChampionPageHolder(binding: HolderChampionPageBinding) : BaseHolder<HolderChampionPageBinding, ChampionPage>(binding) {
         private val championAdapter by lazy {
             ChampionAdapter().apply {
-                submitList(championRepository.findByLines(element.line))
                 onChampionClickListener = {
                     this@ChampionPageAdapter.onChampionClickListener?.invoke(it)
                 }
@@ -77,6 +76,8 @@ class ChampionPageAdapter @Inject constructor(
             with(binding.recyclerView) {
                 adapter = championAdapter
             }
+
+            championAdapter.submitList(championRepository.findByLines(element.line))
         }
     }
 

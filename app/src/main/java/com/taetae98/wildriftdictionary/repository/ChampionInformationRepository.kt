@@ -113,11 +113,7 @@ class ChampionInformationRepository @Inject constructor(
         val arrayList = ArrayList<Item>()
         document.select("div.wildrift-detail__recommend__item__content")[0].children().forEach {
             val name = it.attr("alt")
-            itemRepository.findAll().find { item ->
-                item.name == name
-            }?.let { item ->
-                arrayList.add(item)
-            }
+            arrayList.addAll(itemRepository.findLikeName(name))
         }
 
         return arrayList

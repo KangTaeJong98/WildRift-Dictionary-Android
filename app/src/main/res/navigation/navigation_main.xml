@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_itemFragment_to_itemDialog"
             app:destination="@id/itemDialog" />
+        <action
+            android:id="@+id/action_itemFragment_to_itemSearchDialog"
+            app:destination="@id/itemSearchDialog" />
     </fragment>
     <fragment
         android:id="@+id/runeFragment"
@@ -83,5 +86,13 @@
         <action
             android:id="@+id/action_championSearchDialog_to_championActivity"
             app:destination="@id/championActivity" />
+    </dialog>
+    <dialog
+        android:id="@+id/itemSearchDialog"
+        android:name="com.taetae98.wildriftdictionary.dialog.ItemSearchDialog"
+        tools:layout="@layout/dialog_item_search" >
+        <action
+            android:id="@+id/action_itemSearchDialog_to_itemDialog"
+            app:destination="@id/itemDialog" />
     </dialog>
 </navigation>

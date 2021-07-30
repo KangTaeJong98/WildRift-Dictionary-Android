@@ -99,7 +99,7 @@ class ItemRepository @Inject constructor() {
         return element.select("div.wdr-tooltip__description").text().trim()
     }
 
-    fun findAll(): List<Item> {
+    private fun findAll(): List<Item> {
         if (!::data.isInitialized) {
             runBlocking {
                 update()
@@ -107,5 +107,13 @@ class ItemRepository @Inject constructor() {
         }
 
         return data
+    }
+
+    fun findByTypeAndLevel(type: Item.Type, level: Item.Level): List<Item> {
+        return findAll().filter { it.type == type && it.level == level }
+    }
+
+    fun findLikeName(name: String): List<Item> {
+        return findAll().filter { it.name.contains(name) }
     }
 }
