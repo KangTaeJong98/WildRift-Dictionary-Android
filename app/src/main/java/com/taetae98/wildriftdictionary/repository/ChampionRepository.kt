@@ -54,6 +54,20 @@ class ChampionRepository @Inject constructor() {
         }
     }
 
+    fun findByLines(line: Champion.Line): List<Champion> {
+        if (!::data.isInitialized) {
+            runBlocking {
+                update()
+            }
+        }
+
+        return if (line == Champion.Line.ALL) {
+            data
+        } else {
+            data.filter { it.lines.contains(line) }
+        }
+    }
+
     fun findAll(): List<Champion> {
         if (!::data.isInitialized) {
             runBlocking {
