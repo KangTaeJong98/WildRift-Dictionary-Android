@@ -12,9 +12,6 @@ import com.taetae98.wildriftdictionary.databinding.HolderChampionPageBinding
 import com.taetae98.wildriftdictionary.dto.Champion
 import com.taetae98.wildriftdictionary.repository.ChampionRepository
 import dagger.hilt.android.scopes.FragmentScoped
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @FragmentScoped
@@ -64,14 +61,7 @@ class ChampionPageAdapter @Inject constructor(
     inner class ChampionPageHolder(binding: HolderChampionPageBinding) : BaseHolder<HolderChampionPageBinding, ChampionPage>(binding) {
         private val championAdapter by lazy {
             ChampionAdapter().apply {
-                CoroutineScope(Dispatchers.Main).launch {
-                    if (element.line == Champion.Line.ALL) {
-                        submitList(championRepository.findAll())
-                    } else {
-                        submitList(championRepository.findAll().filter { it.lines.contains(element.line) })
-                    }
-                }
-
+                submitList(championRepository.findByLines(element.line))
                 onChampionClickListener = {
                     this@ChampionPageAdapter.onChampionClickListener?.invoke(it)
                 }

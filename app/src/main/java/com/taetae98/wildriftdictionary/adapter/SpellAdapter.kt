@@ -22,7 +22,7 @@ class SpellAdapter : BaseAdapter<Spell>(itemCallback) {
         }
     }
 
-    val onSpellClickListener: ((Spell) -> Unit)? = null
+    var onSpellClickListener: ((Spell) -> Unit)? = null
 
     init {
         setHasStableIds(true)

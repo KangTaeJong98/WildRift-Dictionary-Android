@@ -40,6 +40,9 @@ class ChampionInformationFragment : BindingFragment<FragmentChampionInformationB
     private val spellAdapter by lazy {
         SpellAdapter().apply {
             submitList(viewModel.information.value?.spell)
+            onSpellClickListener = {
+                findNavController().navigate(ChampionInformationFragmentDirections.actionChampionInformationFragmentToSpellDialog(it))
+            }
         }
     }
 
